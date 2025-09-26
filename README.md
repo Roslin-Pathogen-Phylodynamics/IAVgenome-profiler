@@ -9,7 +9,7 @@ The classification of genomes into profiles involved the definition of phylogene
 
 The methodology developed here and applied to H5Nx clade 2.3.4.4b genomes is described in the preprint Harvey et al. (2025) Genetic reassortment and diversification of host specificity have driven evolutionary trajectories of lineages of panzootic H5N1 influenza. bioRxiv https://doi.org/10.1101/2025.08.20.670882
 
-Our methodology is broadly comparable with existing systems such as that developed to classify genomes sampled in North America (https://github.com/USDA-VS/GenoFLU) or in Europe (https://github.com/izsvenezie-virology/genin2). For a comparison of  
+Our methodology is broadly comparable with existing systems such as that developed to classify genomes sampled in North America (https://github.com/USDA-VS/GenoFLU) or in Europe (https://github.com/izsvenezie-virology/genin2). For a comparison of genotypes profiles assigned here and those attributed by the USDA system, see the directory *H5Nx_2.3.4.4b/v1.2024.12.19/compare_usda_genoFLU*
 
 This research is based on the analysis of data shared with the influenza research community via the GISAID Data Science Initiative (https://gisaid.org). We gratefully acknowledge all data contributors, i.e., the Authors and their Originating laboratories responsible for obtaining the specimens, and their Submitting laboratories for generating the genetic sequence and metadata and sharing via the GISAID Initiative, on which this research is based. 
 

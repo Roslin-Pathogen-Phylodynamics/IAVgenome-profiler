@@ -1,0 +1,187 @@
+---
+title: "Phylo processing - define profiles"
+output: html_document
+---
+
+```{r packages}
+library(dplyr)
+library(ggtree)
+library(treeio)
+library(toolkitSeqTree)
+```
+
+
+### Load data
+
+Load meta data compiled from information associated with GISAID submissions and individual phylogenetic trees generated for set of unique nucleotide sequences per genomic segment
+
+```{r}
+
+load('meta_data.Rdata')
+source('../../R/reorder_numeric_factor.R')
+
+tree_pb2 <- read.newick('segment_trees/unique_pb2_gtr_mid.newick')
+tree_pb1 <- read.newick('segment_trees/unique_pb1_gtr_mid.newick')
+tree_pa <- read.newick('segment_trees/unique_pa_gtr_mid.newick')
+tree_ha <- read.newick('segment_trees/unique_ha_gtr_mid.newick')
+tree_np <- read.newick('segment_trees/unique_np_gtr_mid.newick')
+tree_na <- read.newick('segment_trees/unique_na_gtr_mid.newick')
+tree_mp <- read.newick('segment_trees/unique_mp_gtr_mid.newick')
+tree_ns <- read.newick('segment_trees/unique_ns_gtr_mid.newick')
+```
+
+
+```{r}
+# Fortify trees, generating dataframes
+tree_dat_pb2 <- fortify(tree_pb2)
+tree_dat_pb1 <- fortify(tree_pb1)
+tree_dat_pa <- fortify(tree_pa)
+tree_dat_ha <- fortify(tree_ha)
+tree_dat_np <- fortify(tree_np)
+tree_dat_na <- fortify(tree_na)
+tree_dat_mp <- fortify(tree_mp)
+tree_dat_ns <- fortify(tree_ns)
+
+```
+
+### Run clustering on each tree
+
+```{r}
+tree_dat_pb2 <- phylo_clusters(tree_dat_pb2, t = 0.0075, suppress_singletons = T,
+                               suppress_doubles = T)
+ggtree(tree_pb2, aes(col = tree_dat_pb2$clust))
+
+tree_dat_pb1 <- phylo_clusters(tree_dat_pb1, t = 0.0075, suppress_singletons = T,
+                               suppress_doubles = T)
+ggtree(tree_pb1, aes(col = tree_dat_pb1$clust))
+
+tree_dat_pa <- phylo_clusters(tree_dat_pa, t = 0.0075, suppress_singletons = T,
+                              suppress_doubles = T)
+ggtree(tree_pa, aes(col = tree_dat_pa$clust))
+
+tree_dat_ha <- phylo_clusters(tree_dat_ha, t = 0.0075, suppress_singletons = T,
+                              suppress_doubles = T)
+ggtree(tree_ha, aes(col = tree_dat_ha$clust))
+
+tree_dat_np <- phylo_clusters(tree_dat_np, t = 0.0075, suppress_singletons = T,
+                              suppress_doubles = T)
+ggtree(tree_np, aes(col = tree_dat_np$clust))
+
+tree_dat_na <- phylo_clusters(tree_dat_na, t = 0.01, suppress_singletons = T,
+                              suppress_doubles = T)
+ggtree(tree_na, aes(col = tree_dat_na$clust))
+
+tree_dat_mp <- phylo_clusters(tree_dat_mp, t = 0.01, suppress_singletons = T,
+                              suppress_doubles = T)
+ggtree(tree_mp, aes(col = tree_dat_mp$clust))
+
+tree_dat_ns <- phylo_clusters(tree_dat_ns, t = 0.01, suppress_singletons = T,
+                              suppress_doubles = T)
+ggtree(tree_ns, aes(col = tree_dat_ns$clust))
+
+```
+
+Next, merge info on phlyo clusters in tree data frames to mapping data frames that have 
+
+```{r}
+# merge clusters to map df first and next to meta
+map_pb2 <- left_join(map_pb2, tree_dat_pb2[, c('label', 'clust')],
+                      by = c('phylo_id' = 'label'))
+names(map_pb2) <- gsub('^clust$', 'cluster_pb2', names(map_pb2))
+meta <- left_join(meta, map_pb2[, c('isolate_id', 'cluster_pb2')],
+                  by = 'isolate_id')
+
+map_pb1 <- left_join(map_pb1, tree_dat_pb1[, c('label', 'clust')],
+                      by = c('phylo_id' = 'label'))
+names(map_pb1) <- gsub('^clust$', 'cluster_pb1', names(map_pb1))
+meta <- left_join(meta, map_pb1[, c('isolate_id', 'cluster_pb1')],
+                  by = 'isolate_id')
+
+map_pa <- left_join(map_pa, tree_dat_pa[, c('label', 'clust')],
+                      by = c('phylo_id' = 'label'))
+names(map_pa) <- gsub('^clust$', 'cluster_pa', names(map_pa))
+meta <- left_join(meta, map_pa[, c('isolate_id', 'cluster_pa')],
+                  by = 'isolate_id')
+
+map_ha <- left_join(map_ha, tree_dat_ha[, c('label', 'clust')],
+                      by = c('phylo_id' = 'label'))
+names(map_ha) <- gsub('^clust$', 'cluster_ha', names(map_ha))
+meta <- left_join(meta, map_ha[, c('isolate_id', 'cluster_ha')],
+                  by = 'isolate_id')
+
+map_np <- left_join(map_np, tree_dat_np[, c('label', 'clust')],
+                      by = c('phylo_id' = 'label'))
+names(map_np) <- gsub('^clust$', 'cluster_np', names(map_np))
+meta <- left_join(meta, map_np[, c('isolate_id', 'cluster_np')],
+                  by = 'isolate_id')
+
+map_na <- left_join(map_na, tree_dat_na[, c('label', 'clust')],
+                      by = c('phylo_id' = 'label'))
+names(map_na) <- gsub('^clust$', 'cluster_na', names(map_na))
+meta <- left_join(meta, map_na[, c('isolate_id', 'cluster_na')],
+                  by = 'isolate_id')
+
+map_mp <- left_join(map_mp, tree_dat_mp[, c('label', 'clust')],
+                    by = c('phylo_id' = 'label'))
+names(map_mp) <- gsub('^clust$', 'cluster_mp', names(map_mp))
+meta <- left_join(meta, map_mp[, c('isolate_id', 'cluster_mp')],
+                  by = 'isolate_id')
+
+map_ns <- left_join(map_ns, tree_dat_ns[, c('label', 'clust')],
+                    by = c('phylo_id' = 'label'))
+names(map_ns) <- gsub('^clust$', 'cluster_ns', names(map_ns))
+meta <- left_join(meta, map_ns[, c('isolate_id', 'cluster_ns')],
+                  by = 'isolate_id')
+
+```
+
+Next, some reordering of cluster labels so that 1 is most common etc.
+
+```{r}
+# reorder cluster labels according to cluster frequency
+meta$cluster_pb2 <- as.numeric(as.factor(meta$cluster_pb2))
+meta$cluster_pb2 <- reorder_numeric_factor(meta$cluster_pb2)
+
+meta$cluster_pb1 <- as.numeric(as.factor(meta$cluster_pb1))
+meta$cluster_pb1 <- reorder_numeric_factor(meta$cluster_pb1)
+
+meta$cluster_pa <- as.numeric(as.factor(meta$cluster_pa))
+meta$cluster_pa <- reorder_numeric_factor(meta$cluster_pa)
+
+meta$cluster_ha <- as.numeric(as.factor(meta$cluster_ha))
+meta$cluster_ha <- reorder_numeric_factor(meta$cluster_ha)
+
+meta$cluster_np <- as.numeric(as.factor(meta$cluster_np))
+meta$cluster_np <- reorder_numeric_factor(meta$cluster_np)
+
+meta$cluster_na <- as.numeric(as.factor(meta$cluster_na))
+meta$cluster_na <- reorder_numeric_factor(meta$cluster_na)
+
+meta$cluster_mp <- as.numeric(as.factor(meta$cluster_mp))
+meta$cluster_mp <- reorder_numeric_factor(meta$cluster_mp)
+
+meta$cluster_ns <- as.numeric(as.factor(meta$cluster_ns))
+meta$cluster_ns <- reorder_numeric_factor(meta$cluster_ns)
+
+```
+
+### Cluster (reassortment) profile
+
+Make full reassortment profile by pasting together gene segment specific cluster columns.
+
+```{r}
+meta$cluster_profile <- paste(meta$cluster_pb2,
+                              meta$cluster_pb1,
+                              meta$cluster_pa,
+                              meta$cluster_ha,
+                              meta$cluster_np,
+                              meta$cluster_na,
+                              meta$cluster_mp,
+                              meta$cluster_ns, sep = '_')
+
+```
+
+```{r}
+save.image('define_profiles.Rdata')
+```
+

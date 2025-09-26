@@ -1,0 +1,88 @@
+---
+title: "Phylo prep - label profiles"
+output: html_document
+---
+
+```{r packages}
+library(dplyr)
+```
+
+```{r}
+load('define_profiles.Rdata')
+```
+
+### Reassortment profile labels
+
+```{r}
+table_cluster <- as.data.frame(table(meta$cluster_profile))
+table_cluster$Var1 <- as.character(table_cluster$Var1)
+table_cluster <- table_cluster[order(table_cluster$Freq, decreasing = T),]
+
+```
+
+Now add some further columns to the data frame for values per reassortment cluster - this information is independent of other clusters, so can gather this info for all clusters.
+
+```{r}
+table_cluster$subtype <- NA
+table_cluster$date_year_first <- NA
+table_cluster$date_first <- NA
+table_cluster$date_submission_first <- NA
+
+for (i in 1:nrow(table_cluster)) {
+  if (table_cluster$Freq[i] >= 1) {
+    profile <- table_cluster$Var1[i]
+    temp <- meta[which(meta$cluster_profile == profile),]
+    table_cluster$date_submission_first[i] <- min(temp$submission_date)
+    temp <- temp[order(temp$submission_date),]
+    table_cluster$date_submission_first[i] <- temp$submission_date[1]
+    temp <- arrange(temp, -date_complete, date)
+    table_cluster$date_first[i] <- temp$date[1]
+    table_cluster$subtype[i] <- temp$subtype[1]
+    table_cluster$date_year_first[i] <- temp$date_year[1]
+  }
+}
+
+
+```
+
+Cluster labels have a value which indicates the order in which reassortant profiles emerged. Order of emergence - this is not independent so work with a cutoff value (*t*).
+
+```{r}
+# Sub-sample to include only entries with at least t sequences
+threshold <- 10
+cutoff <- table_cluster[table_cluster$Freq >= threshold,]
+
+# order this sub-sample by submission date and then frequency 
+# frequency (only sorting those with same date)
+cutoff <- cutoff[order(cutoff$date_first,
+                       cutoff$Freq), ]
+
+# loop through these profiles, creating labels
+cutoff$cluster_label <- NA
+for (i in 1:nrow(cutoff)) {
+  subtype <- cutoff$subtype[i]
+  year <- cutoff$date_year_first[i]
+  curr_profile <- cutoff$Var1[i]
+  
+  # Emergence Number - get set of profiles matching year and subtype (not location)
+  rel_profiles <- cutoff$Var1[cutoff$date_year_first == year & cutoff$subtype == subtype]
+  # where does current profile fall within this set
+  num <- match(curr_profile, rel_profiles)
+  
+  lab <- paste0(subtype, '/', year, '/R', num)
+  cutoff$cluster_label[i] <- lab
+}
+
+
+## merge these profile  labels to meta
+cutoff <- cutoff[,c('Var1', 'cluster_label')]
+meta <- left_join(meta, cutoff, by = c("cluster_profile" = "Var1"))
+
+```
+
+
+```{r}
+towrite <- meta[, c("isolate_id", "cluster_profile", "cluster_label")]
+names(towrite) <- c('GISAID_isolate_id', 'genotype_profile', 'genotype_label')
+write.csv(towrite, 'genome_profiles.csv', quote = F, row.names = F, col.names = F)
+```

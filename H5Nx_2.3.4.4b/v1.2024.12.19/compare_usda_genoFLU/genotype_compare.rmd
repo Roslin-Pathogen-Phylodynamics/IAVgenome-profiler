@@ -1,0 +1,72 @@
+---
+title: "Genotype comparison with USDA system"
+output: html_document
+fig_caption: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
+library(dplyr)
+library(ggplot2)
+library(stringr)
+```
+
+Sourced file contains genotype labels assigned by method described in Harvey *et al*. 2025 (https://doi.org/10.1101/2025.08.20.670882) and genotypes assigned by the USDA GenoFLU system (https://github.com/USDA-VS/GenoFLU) as presented linked to isolates downloaded from GISAID (https://gisaid.org).
+
+```{r data}
+dat <- read.csv('genome_profiles_compare_genoFLU.csv')
+
+dat <- dat[grepl('^H5N1', dat$genotype_label),]
+dat <- dat[!grepl('^Minor', dat$USDA_genotype),]
+dat <- dat[!dat$USDA_genotype %in% c('Notassigned'),]
+dat <- dat[!is.na(dat$genotype_label),]
+dat <- dat[!is.na(dat$USDA_genotype),]
+
+
+
+tab <- as.data.frame(table(dat$genotype_label,
+                        dat$USDA_genotype),
+                     stringsAsFactors = F)
+```
+
+```{r levels, include=FALSE}
+# reorder factor levels to make plot easier to interpret
+tab$Var2 <- factor(tab$Var2, levels = c("A1", "A2", "A3", "A4", "A5", "A6", "B1.1",
+                                        "B1.2", "B1.3", "B2.1", "B2.2", "B3.1",
+                                        "B3.2", "B3.3", "B3.5", "B3.6", "B3.7",
+                                        "B3.8", "B3.9", "B3.10", "B3.11", "B3.12",
+                                        "B3.13", "B4.1", "B5.1", "C2.1", "D1.1"))
+tab$Var1 <- factor(tab$Var1, levels = c("H5N1/2020/R1", "H5N1/2021/R1", "H5N1/2022/R1",
+                                        "H5N1/2022/R5", "H5N1/2022/R12", "H5N1/2022/R4",
+                                        "H5N1/2022/R8", "H5N1/2022/R6", "H5N1/2022/R7",
+                                        "H5N1/2022/R14", "H5N1/2023/R1", "H5N1/2022/R18",
+                                        "H5N1/2023/R5", "H5N1/2023/R7", "H5N1/2023/R10",
+                                        "H5N1/2022/R3", "H5N1/2022/R2", "H5N1/2023/R6",
+                                        "H5N1/2024/R1"))
+
+```
+
+### Plot
+
+Here, we generate plot showing degree of correspondence between genotype systems. Tiles are coloured by the number of genomes assigned to a genotype combination:
+
+```{r plot, fig.width = 9.5, fig.height = 5}
+ggplot(tab, aes(x = Var2, y = Var1, fill = Freq)) +
+  geom_tile(col = 'grey85') +
+  scale_fill_gradient(trans = 'log', breaks = c(3, 30, 300),
+                      low = 'white', high = 'darkorange3',  na.value = 'grey95') +
+  labs(x = 'USDA genotypes including introductions (A1-A5)',
+       y = 'Genotype label',
+       fill = 'Genome\ncount') +
+  theme_minimal() +
+  theme(text = element_text(size = 15),
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        axis.text.y = element_text(hjust = 0))
+ggsave('genotype_compare.png', dpi = 320, bg = 'white', width = 9.5, height = 5)
+```
+
+Generally, genomes are assigned to one distinct genotype by both systems, though there are some exceptions. For example, a small number of genotypes assigned to genotypes B3.8, B3.11 and B3.12 are assigned to the label H5N1/2022/R18 in addition to B3.6 viruses which comprise the vast majority of H5N1/2022/R18 genomes.
+
+For the USDA system, A-type genotypes (A1-A5 etc.) represent epidemiologically distinct introductions of H5N1 clade 2.3.4.4b into North America, B-type genotypes are inferred to be reassortants of the A1 genotype with North American viruses, C-types reassortants of the A2 genotype and so on. For further details, see Youk *et al*. 2023 (https://doi.org/10.1016/j.virol.2023.109860).

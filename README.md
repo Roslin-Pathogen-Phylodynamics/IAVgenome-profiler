@@ -9,7 +9,12 @@ The classification of genomes into profiles involved the definition of phylogene
 
 The methodology developed here and applied to H5Nx clade 2.3.4.4b genomes is described in the preprint Harvey et al. (2025) Genetic reassortment and diversification of host specificity have driven evolutionary trajectories of lineages of panzootic H5N1 influenza. bioRxiv https://doi.org/10.1101/2025.08.20.670882
 
-Our methodology is broadly comparable with existing systems such as that developed to classify genomes sampled in North America (https://github.com/USDA-VS/GenoFLU) or in Europe (https://github.com/izsvenezie-virology/genin2). For a comparison of genotypes profiles assigned here and those attributed by the USDA system, see the directory *H5Nx_2.3.4.4b/v1.2024.12.19/compare_usda_genoFLU*
+Our methodology is broadly comparable with existing systems such as that developed to classify genomes sampled in North America (https://github.com/USDA-VS/GenoFLU) or in Europe (https://github.com/izsvenezie-virology/genin2). In our manuscript, we focus on evolution Europe where we characterise genotypes that are consistent with those defined by the genin2 system. For a comparison of genotypes profiles assigned here and those attributed by the USDA GenoFLU system, see the directory *H5Nx_2.3.4.4b/v1.2024.12.19/compare_usda_genoFLU* which includes a script to generate the following image summarising a high degree of correspondence in genotype assignment:
+
+<img width="3040" height="1600" alt="genotype_compare" src="https://github.com/user-attachments/assets/92295b71-dfed-4319-aaf0-1de1ec7656d3" />
+
+
+To replicate the definition of genotypic profiles described in our manuscript, please see the .Rmd files in *H5Nx_2.3.4.4b/v1.2024.12.19/*. The definition of clusters on each phylogenetic code is done using R functions belonging to the *toolkitSeqTree* R package. For information on how to install and use the *toolkitSeqTree* R package, please see https://github.com/will-harvey/toolkit_seqTree.
 
 This research is based on the analysis of data shared with the influenza research community via the GISAID Data Science Initiative (https://gisaid.org). We gratefully acknowledge all data contributors, i.e., the Authors and their Originating laboratories responsible for obtaining the specimens, and their Submitting laboratories for generating the genetic sequence and metadata and sharing via the GISAID Initiative, on which this research is based. 
 

@@ -1,0 +1,56 @@
+Label,N,Subtype,Profile,PrincipalGeographies,PrincipalHosts,TemporalSpan,PeakMonthlyAbundance,HA_diversity,USDA Genotype
+H5N1/2020/R1_Europe,2404,H5N1,2_1_1_1_2_1_1_1,"North America (44.6%), Europe (35.8%), Africa (10.9%)","Galliformes (36.4%), Anseriformes (24.4%), Charadriiformes (11.3%)",2020-10-16 - 2024-10-17,2022-03 (332),10,"A1, A2, A3, A5, Notassigned"
+H5N1/2023/R10_NAmerica,1536,H5N1,3_2_1_1_1_1_1_2,North America (100%),"Mammal (87.4%), Galliformes (11.3%)",2023-11-08 - 2024-10-18,2024-06 (281),2,B3.13
+H5N1/2021/R2_Europe,1408,H5N1,1_1_2_1_2_1_1_1,Europe (98.7%),"Anseriformes (42.8%), Galliformes (30.6%), Charadriiformes (10.6%)",2021-09-30 - 2024-02-27,2023-01 (154),10,Notassigned
+H5N1/2022/R7_NAmerica,1158,H5N1,5_3_1_1_1_1_1_2,"North America (78.7%), South America (20%)","Galliformes (33.9%), Anseriformes (21.3%)",2022-03-20 - 2024-03-15,2022-11 (157),7,B3.2
+H5N8/2020/R2_Asia,1124,H5N8,6_4_3_1_3_2_1_3,"Europe (68.7%), Asia (30.5%)","Anseriformes (53.2%), Galliformes (36.5%)",2020-05-12 - 2022-03-01,2020-11 (253),7,Notassigned
+H5N1/2022/R10_Europe,1027,H5N1,1_1_4_1_4_1_1_4,Europe (100%),"Charadriiformes (72.7%), Mammal (11.8%)",2022-05-11 - 2024-08-10,2023-07 (192),6,Notassigned
+H5N1/2022/R4_NAmerica,864,H5N1,4_1_1_1_1_1_1_1,North America (100%),"Galliformes (46.1%), Anseriformes (28.6%), Accipitriformes (13.5%)",2022-02-18 - 2023-09-07,2022-04 (496),3,B2.1
+H5N1/2022/R18_NAmerica,644,H5N1,7_2_1_1_1_1_1_2,North America (100%),"Galliformes (56.7%), Anseriformes (30.4%)",2022-12-11 - 2024-07-31,2023-11 (199),8,B3.6
+H5N1/2022/R3_NAmerica,513,H5N1,3_1_1_1_1_1_1_1,North America (100%),"Anseriformes (35.9%), Galliformes (31.4%), Accipitriformes (12.7%)",2022-02-01 - 2024-02-16,2022-05 (144),4,B4.1
+H5N1/2022/R5_NAmerica,451,H5N1,4_5_5_1_1_1_1_1,North America (100%),"Anseriformes (39%), Accipitriformes (20.4%), Galliformes (15.1%), Charadriiformes (10.9%)",2022-02-24 - 2023-12-05,2022-04 (163),7,B1.2
+H5N1/2022/R1_NAmerica,322,H5N1,4_5_1_1_1_1_1_1,North America (100%),"Accipitriformes (60.9%), Anseriformes (17.4%), Galliformes (12.7%)",2022-01-25 - 2024-05-24,2022-04 (120),5,B1.1
+H5N1/2022/R12_NAmerica,202,H5N1,4_3_7_1_1_1_1_1,North America (98.5%),"Anseriformes (39.6%), Galliformes (35.1%), Accipitriformes (10.4%)",2022-08-19 - 2023-11-25,2022-09 (65),3,B1.3
+H5N1/2022/R6_NAmerica,199,H5N1,5_1_1_1_1_1_1_1,North America (100%),"Galliformes (25.6%), Anseriformes (25.1%), Passeriformes (16.6%)",2022-03-04 - 2022-10-19,2022-04 (94),3,B3.1
+H5N8/2020/R1_Europe,196,H5N8,9_7_6_2_2_2_1_3,"Asia (67.9%), Europe (32.1%)","Galliformes (59.7%), Anseriformes (33.2%)",2020-01-01 - 2021-03-03,2020-11 (48),7,Notassigned
+H5N1/2022/R17_Europe,170,H5N1,1_6_2_1_2_1_1_1,Europe (100%),"Galliformes (48.2%), Anseriformes (47.6%)",2022-11-14 - 2024-10-28,2024-02 (74),7,Notassigned
+H5N1/2022/R16_Asia,144,H5N1,11_6_8_1_5_1_1_5,Asia (100%),Gruiformes (98.6%),2022-11-01 - 2023-02-01,2022-11 (117),3,Notassigned
+H5N5/2020/R2_Europe,142,H5N5,8_6_2_1_2_3_1_1,"Europe (68.3%), Asia (16.2%), North America (15.5%)","Charadriiformes (45.1%), Passeriformes (18.3%), Accipitriformes (13.4%)",2020-12-29 - 2024-10-15,2024-09 (23),6,"A6, Notassigned"
+H5N1/2023/R2_Europe,127,H5N1,8_8_2_1_2_1_1_1,Europe (100%),"Galliformes (74%), Anseriformes (14.2%), Gruiformes (10.2%)",2023-02-21 - 2024-03-27,2024-01 (66),6,Notassigned
+H5N1/2022/R11_Asia,112,H5N1,10_9_2_1_5_1_1_6,Asia (100%),Anseriformes (63.4%),2022-07-08 - 2024-02-23,2023-01 (30),8,Notassigned
+H5N8/2020/R4_Asia,109,H5N8,12_10_6_2_2_2_1_3,Asia (100%),"Galliformes (85.3%), Anseriformes (11.9%)",2020-11-23 - 2021-03-13,2020-12 (82),5,Notassigned
+H5N1/2021/R1_Asia,106,H5N1,8_7_1_1_2_1_1_1,Asia (92.5%),"Galliformes (50.9%), Anseriformes (48.1%)",2021-05-20 - 2023-07-24,2021-12 (36),13,"A4, Notassigned"
+H5N1/2023/R6_NAmerica,96,H5N1,4_5_9_1_2_1_1_1,North America (100%),"Anseriformes (66.7%), Galliformes (30.2%)",2023-10-21 - 2024-05-23,2024-02 (38),7,C2.1
+H5N1/2022/R8_NAmerica,89,H5N1,4_1_1_1_1_1_1_2,North America (98.9%),"Galliformes (50.6%), Anseriformes (28.1%), Accipitriformes (15.7%)",2022-03-31 - 2023-04-20,2022-11 (25),6,B2.2
+H5N1/2023/R1_NAmerica,83,H5N1,13_3_1_1_1_1_1_2,North America (100%),"Anseriformes (37.3%), Accipitriformes (20.5%), Passeriformes (20.5%), Galliformes (13.3%)",2023-02-05 - 2023-05-18,2023-03 (38),5,B3.5
+H5N1/2023/R5_NAmerica,79,H5N1,3_2_1_1_6_1_1_2,North America (100%),"Anseriformes (50.6%), Galliformes (43%)",2023-09-11 - 2024-05-02,2023-11 (36),5,B3.7
+H5N1/2021/R4_Europe,60,H5N1,1_1_1_1_2_1_1_1,"Asia (70%), Europe (30%)","Anseriformes (43.3%), Galliformes (26.7%), Charadriiformes (11.7%)",2021-10-13 - 2024-02-14,2022-07 (16),14,Notassigned
+H5N1/2023/R3_Europe,53,H5N1,1_8_2_1_2_1_1_1,Europe (100%),"Anseriformes (49.1%), Galliformes (34%)",2023-03-14 - 2024-02-15,2023-11 (29),5,Notassigned
+H5N1/2022/R14_NAmerica,50,H5N1,15_11_1_1_1_1_1_2,North America (100%),"Galliformes (60%), Anseriformes (38%)",2022-09-20 - 2023-09-13,2023-07 (15),5,B3.3
+H5N1/2021/R12_Asia,45,H5N1,8_12_1_1_2_1_1_1,Asia (100%),"Galliformes (53.3%), Anseriformes (42.2%)",2021-12-29 - 2022-04-07,2022-01 (24),6,Notassigned
+H5N1/2023/R9_Europe,43,H5N1,16_1_2_1_2_1_1_1,Europe (100%),"Anseriformes (53.5%), Galliformes (30.2%)",2023-11-01 - 2024-06-25,2023-12 (15),5,Notassigned
+H5N1/2021/R6_Europe,39,H5N1,14_8_1_1_7_1_1_5,Europe (100%),"Galliformes (74.4%), Anseriformes (17.9%)",2021-10-28 - 2024-08-23,2023-01 (12),8,Notassigned
+H5N1/2022/R2_NAmerica,37,H5N1,2_1_1_1_1_1_1_1,North America (100%),"Anseriformes (43.2%), Galliformes (35.1%)",2022-02-01 - 2022-05-12,2022-03 (16),3,"B5.1, Minor04, Minor09, Minor12"
+H5N1/2021/R9_Europe,33,H5N1,8_14_1_1_2_1_1_1,Europe (100%),Galliformes (97%),2021-11-15 - 2022-01-11,2021-12 (27),0,Notassigned
+H5N1/2023/R7_NAmerica,28,H5N1,7_2_1_1_8_1_1_2,North America (100%),"Anseriformes (53.6%), Accipitriformes (17.9%), Galliformes (14.3%)",2023-10-23 - 2024-03-16,2023-11 (17),3,B3.10
+H5N8/2021/R1_Europe,28,H5N8,6_7_2_1_3_2_1_3,Europe (100%),"Galliformes (57.1%), Accipitriformes (25%), Anseriformes (14.3%)",2021-02-16 - 2021-05-21,2021-03 (20),4,Notassigned
+H5N1/2022/R15_Europe,25,H5N1,14_1_10_1_2_1_1_1,Europe (100%),"Anseriformes (64%), Galliformes (16%)",2022-10-31 - 2023-03-06,2022-11 (11),5,Notassigned
+H5N6/2021/R1_Asia,25,H5N6,18_13_11_1_10_5_1_7,Asia (100%),"Anseriformes (80%), Galliformes (16%)",2021-05-01 - 2022-07-13,2021-07 (8),9,Notassigned
+H5N1/2022/R13_NAmerica,23,H5N1,2_15_12_1_2_1_1_1,North America (100%),Galliformes (100%),2022-09-19 - 2022-12-14,2022-12 (12),0,Notassigned
+H5N1/2021/R11_Asia,20,H5N1,8_6_1_1_2_1_1_1,Asia (95%),Anseriformes (95%),2021-12-20 - 2022-03-24,2022-03 (9),4,Notassigned
+H5N1/2023/R4_Asia,19,H5N1,10_9_2_1_5_1_1_8,Asia (100%),Anseriformes (100%),2023-09-09 - 2024-02-23,2023-11 (9),16,Notassigned
+H5N5/2020/R1_Europe,18,H5N5,6_4_2_1_3_4_1_3,Europe (100%),"Anseriformes (61.1%), Galliformes (27.8%)",2020-10-29 - 2021-03-30,2020-11 (7),2,Notassigned
+H5N1/2023/R11_Europe,14,H5N1,1_17_13_1_4_1_1_4,Europe (100%),Charadriiformes (85.7%),2023-11-12 - 2024-08-14,2024-07 (4),9,Notassigned
+H5N1/2023/R8_NAmerica,13,H5N1,4_2_1_1_1_1_1_2,North America (100%),"Anseriformes (53.8%), Galliformes (38.5%)",2023-10-27 - 2024-01-03,2023-11 (9),6,"Minor62, Minor63"
+H5N3/2020/R1_Europe,13,H5N3,21_6_2_1_9_8_1_1,Europe (100%),"Charadriiformes (61.5%), Falconiformes (23.1%), Accipitriformes (15.4%)",2020-12-14 - 2021-02-22,2021-01 (8),2,Notassigned
+H5N1/2021/R7_Europe,12,H5N1,17_1_1_1_2_1_1_1,Europe (100%),"Anseriformes (50%), Mammal (41.7%)",2021-10-31 - 2022-03-07,2021-12 (6),9,Notassigned
+H5N1/2022/R19_Asia,12,H5N1,22_1_15_1_2_1_1_1,Asia (100%),"Passeriformes (75%), Mammal (16.7%)",2022-12-12 - 2023-04-18,2023-02 (4),1,Notassigned
+H5N1/2024/R1_NAmerica,12,H5N1,23_1_16_1_1_9_1_1,North America (100%),Anseriformes (83.3%),2024-05-19 - 2024-10-23,2024-10 (11),2,D1.1
+H5N1/2021/R10_Europe,11,H5N1,2_1_1_1_9_1_1_1,Europe (100%),Charadriiformes (63.6%),2021-12-17 - 2022-02-11,2022-01 (6),3,Notassigned
+H5N1/2021/R5_Europe,11,H5N1,17_1_2_1_2_1_1_1,Europe (100%),"Galliformes (63.6%), Anseriformes (27.3%)",2021-10-14 - 2023-09-26,2023-09 (7),17,Notassigned
+H5N8/2020/R3_Europe,11,H5N8,6_4_3_1_2_2_1_3,Europe (90.9%),"Galliformes (45.5%), Anseriformes (36.4%), Mammal (18.2%)",2020-10-09 - 2021-08-19,2021-03 (5),11,Notassigned
+H5N1/2021/R3_Europe,10,H5N1,14_1_1_1_2_1_1_1,Europe (100%),"Galliformes (40%), Accipitriformes (30%)",2021-10-01 - 2022-02-01,2021-10 (5),5,Notassigned
+H5N1/2022/R9_Asia,10,H5N1,1_16_2_1_5_1_1_5,Asia (100%),Anseriformes (90%),2022-10-17 - 2022-12-20,2022-11 (6),4,Notassigned
+H5N1/2021/R8_Asia,9,H5N1,19_1_1_1_2_1_1_1,Asia (100%),Anseriformes (100%),2021-12-19 - 2022-03-09,2021-12 (8),2,Notassigned
+H5N8/2020/R5_Asia,9,H5N8,1_10_8_2_2_2_1_11,Asia (100%),"Galliformes (66.7%), Anseriformes (33.3%)",2020-12-04 - 2020-12-28,2020-12 (9),4,Notassigned
+H5N8/2021/R2_Asia,9,H5N8,1_18_2_1_5_2_1_1,Asia (100%),Anseriformes (100%),2021-09-16 - 2021-11-16,2021-10 (4),5.5,Notassigned

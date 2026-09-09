@@ -1,0 +1,1 @@
+'Simple' versions of trait files have traits with fewer than 20 taxa replaced by 'other'

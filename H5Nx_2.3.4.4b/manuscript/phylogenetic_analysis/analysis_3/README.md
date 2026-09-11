@@ -1,0 +1,1 @@
+Fig3a_fully_annotated.pdf shows a fully annotated version of time-scaled HA phylogeny shown in Fig 3a featuring sample of viruses detected in Europe. Tip points are coloured by reassortant genotype and tree can be zoomed to read tip labels that denote GISAID isolate ID and genotype label.

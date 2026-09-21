@@ -1,0 +1,25 @@
+"","Point est.","Upper C.I."
+"joint",1.013,1.061
+"prior",1.029,1.128
+"likelihood",1.009,1.042
+"treeModel.rootHeight",1.001,1.005
+"age.root.",1.001,1.005
+"treeLength",1.037,1.162
+"exponential.popSize",1.007,1.036
+"exponential.growthRate",1.002,1.006
+"CP1.2.kappa",1,1
+"CP3.kappa",1,1.001
+"frequencies1",1,1
+"frequencies2",1,1.001
+"frequencies3",1.001,1.006
+"frequencies4",1,1.001
+"CP1.2.alpha",1,1.002
+"CP3.alpha",1.001,1.002
+"CP1.2.nu",1,1.002
+"CP3.nu",1,1.002
+"CP1.2.mu",1,1.002
+"CP3.mu",1,1.002
+"clock.rate",1.011,1.053
+"meanRate",1.011,1.053
+"treeLikelihood",1.009,1.042
+"coalescent",1.029,1.128
